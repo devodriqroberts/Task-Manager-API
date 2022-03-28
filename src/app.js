@@ -1,7 +1,8 @@
-import express from 'express';
-import userRouter from './routers/userRoutes.js';
-import taskRouter from './routers/taskRoutes.js';
-import maintenance_mode from './middleware/maintenance.js';
+const express = require('express');
+const userRouter = require('./routers/userRoutes');
+const taskRouter = require('./routers/taskRoutes');
+const maintenance_mode = require('./middleware/maintenance');
+require('./db/mongoose');
 
 
 const app = express()
@@ -13,4 +14,4 @@ app.use(express.json())
 app.use("/users", userRouter)
 app.use("/tasks", taskRouter)
 
-export default app
+module.exports =  app

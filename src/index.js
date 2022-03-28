@@ -1,12 +1,15 @@
-import mongooseConnection from './db/mongoose.js';
-import app from './app.js';
+const app = require('./app');
 
 const port = process.env.PORT
 
-mongooseConnection().then(() => {
-    app.listen(port, () => {
-        console.log(`Server is up on port ${port}.`);
-    })
-}).catch(e => {
-    console.log(e);
+// mongooseConnection().then(() => {
+//     app.listen(port, () => {
+//         console.log(`Server is up on port ${port}.`);
+//     })
+// }).catch(e => {
+//     console.log(e);
+// })
+
+app.listen(port, () => {
+    console.log(`Server is up on port ${port}.`);
 })
